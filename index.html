@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASL Fingerspelling</title>
+    <base href="/" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="topic-select-container">
+      <button class="topic-button" onclick="toggleTopicDropdown()">
+        Select Topics
+      </button>
+      <div id="topicDropdown" class="topic-dropdown"></div>
+    </div>
+    <div id="imageDisplay"></div>
+    <div id="controls">
+      <input
+        id="inputDelay"
+        type="number"
+        placeholder="Delay in ms"
+        onchange="updateDelay()"
+      />
+      <input id="inputGuess" type="text" placeholder="Enter your guess" />
+      <button onclick="checkGuess()">Submit Guess</button>
+      <div id="feedback"></div>
+      <button onclick="replay()">Replay</button>
+      <button onclick="nextWord()">Next Word</button>
+      <button id="editWordLists" onclick="openEditModal()">
+        Edit Word Lists
+      </button>
+    </div>
+
+    <!-- Modal for editing topics/words -->
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <select
+          id="modalTopicSelect"
+          onchange="populateModalTextarea()"
+        ></select>
+        <textarea
+          id="modalTopicWords"
+          rows="12"
+          placeholder="Enter words separated by new lines"
+        ></textarea>
+        <div class="modal-buttons">
+          <button onclick="submitModalChanges()">Submit</button>
+          <button onclick="addModalTopic()">Add Topic</button>
+          <button onclick="removeModalTopic()">Remove Topic</button>
+          <button onclick="closeEditModal()">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

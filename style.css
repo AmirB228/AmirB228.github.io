@@ -1,0 +1,184 @@
+:root {
+  --primary-color: #111316;
+  --secondary-color: #5892d8;
+  --tertiary-color: #000000;
+  --text-color: #ffffff;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, var(--primary-color) 100%, var(--secondary-color) 100%);
+  color: var(--text-color);
+}
+
+#imageDisplay {
+  width: 300px;
+  height: 300px;
+  background: var(--tertiary-color) url('placeholder.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+#controls {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+input, button, select {
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+  background-color: var(--tertiary-color);
+  color: var(--text-color);
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+#feedback {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.topic-select-container {
+  position: relative;
+  margin-bottom: 20px;
+  width: 300px;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.topic-button {
+  width: 100%;
+  text-align: left;
+  position: relative;
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+  border: 1px solid var(--secondary-color);
+  transition: background-color 0.2s ease;
+}
+
+.topic-button:hover {
+  background-color: #6fa3e9;
+  color: var(--tertiary-color);
+}
+
+.topic-button:after {
+  content: '▼';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease;
+}
+
+.topic-button.open:after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.topic-dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 100%;
+  background-color: var(--tertiary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 7px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  max-height: 0;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: max-height 0.25s ease, opacity 0.25s ease;
+  z-index: 1000;
+}
+
+.topic-dropdown.show {
+  max-height: 350px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.topic-option {
+  padding: 8px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.topic-option:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.topic-option.selected {
+}
+
+/* Hide default checkbox but keep it accessible */
+.topic-option input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--primary-color);
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content textarea {
+  flex: 1;
+  margin: 10px 0;
+  resize: vertical;
+  background: var(--tertiary-color);
+  color: var(--text-color);
+  border-radius: 7px;
+  padding: 10px;
+  border: none;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}

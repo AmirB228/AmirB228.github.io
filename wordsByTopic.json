@@ -1,0 +1,119 @@
+{
+  "Theory of Mind": [
+    "Theory of Mind",
+    "False-Belief Task",
+    "Second-Order ToM"
+  ],
+  "Bayesian Statistics": [
+    "Bayesian Inference",
+    "Prior",
+    "Likelihood",
+    "Posterior",
+    "Marginal Likelihood"
+  ],
+  "Sign Language": [
+    "Gloss",
+    "Homesign",
+    "Nicaraguan Sign Language",
+    "Emergent Grammar",
+    "Spatial Loci",
+    "Classifier Construction",
+    "Role-Shift"
+  ],
+  "Research Methods": [
+    "Annotation",
+    "Transcription",
+    "Coding",
+    "Nonmanual Markers",
+    "Annotation Schema",
+    "Tier",
+    "Inter-Annotator Agreement"
+  ],
+  "Language Acquisition": [
+    "Iconicity",
+    "Bootstrapping Hypothesis",
+    "Form–Meaning Mapping"
+  ],
+  "Ethics": [
+    "Deaf-Led Research",
+    "Systemic Bias",
+    "Naturalistic Data",
+    "Consent Form",
+    "Cultural Sensitivity",
+    "Data Governance"
+  ],
+  "Tools & Software": [
+    "ELAN",
+    "ANVIL",
+    "SignLex",
+    "SemLex",
+    "SignStream",
+    "HamNoSys",
+    "MediaPipe",
+    "OpenPose"
+  ],
+  "Computer Vision": [
+    "RGB-D Sensors",
+    "3D Hand-Pose Estimation",
+    "Skeleton Tracking"
+  ],
+  "Machine Learning": [
+    "Convolutional Neural Network",
+    "Recurrent Neural Network",
+    "LSTM",
+    "Transformer",
+    "Hidden Markov Model",
+    "Conditional Random Field",
+    "Dynamic Time Warping",
+    "Data Augmentation",
+    "Domain Adaptation",
+    "Multimodal Fusion",
+    "Transfer Learning"
+  ],
+  "Evaluation Metrics": [
+    "Word Error Rate",
+    "BLEU",
+    "CIDEr"
+  ],
+  "Researchers": [
+    "Malihe Alikhani",
+    "Annemarie Kocab",
+    "Saki Imai",
+    "Alex Lu",
+    "Josh Tenenbaum",
+    "Noah Goodman",
+    "Tom Griffiths",
+    "Simon Baron-Cohen",
+    "Uta Frith",
+    "Josef Perner",
+    "Henry Wellman",
+    "Ann Senghas",
+    "Susan Goldin-Meadow",
+    "Ted Supalla",
+    "Carla Mathur",
+    "Shinichi Imai",
+    "Peggy Speidel",
+    "Pauline Gardaz",
+    "Oscar Koller",
+    "Hamed R. Tavakoli",
+    "Richard Bowden",
+    "Barbara Plank",
+    "Geoffrey Hinton",
+    "Yann LeCun",
+    "Andrew Ng",
+    "Ashish Vaswani",
+    "Ilya Sutskever",
+    "Martin Sundermeyer",
+    "Zhe Cao",
+    "Martin R. Leahy",
+    "Michael Black",
+    "Timnit Gebru",
+    "Joy Buolamwini",
+    "Kate Crawford",
+    "Latanya Sweeney",
+    "Mark Aronoff",
+    "Elissa Newport",
+    "Kathryn Campbell-Kibler",
+    "Susan Fussell"
+  ]
+}
