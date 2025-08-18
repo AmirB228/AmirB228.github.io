@@ -9,7 +9,58 @@ var wordsByTopic = {
     "Prior",
     "Likelihood",
     "Posterior",
-    "Marginal Likelihood"
+    "Marginal Likelihood",
+    "frequency matching",
+    "regularization",
+    "iterated learning",
+    "diffusion chains",
+    "population dynamics",
+    "convergence",
+    "learning biases",
+    "hierarchical model",
+    "prior distribution",
+    "Bayesian network",
+    "Markov chain Monte Carlo",
+    "MCMC convergence",
+    "Bayes factor",
+    "cross-validation",
+    "mixed-effects model",
+    "linear mixed model",
+    "model selection",
+    "effect size",
+    "variance component estimation",
+    "maximum likelihood estimation",
+    "restricted maximum likelihood (REML)",
+    "minimum variance unbiased estimation",
+    "network meta-analysis",
+    "Bayesian model averaging",
+    "Bayesian hierarchical model",
+    "posterior distribution",
+    "credible interval",
+    "posterior predictive check",
+    "likelihood function",
+    "null hypothesis",
+    "alternative hypothesis",
+    "confidence interval",
+    "sampling distribution",
+    "parameter estimation",
+    "credible region",
+    "prior predictive distribution",
+    "random intercepts",
+    "random slopes",
+    "fixed effects",
+    "interaction effect",
+    "statistical power",
+    "p-value",
+    "statistical significance",
+    "informative prior",
+    "uninformative prior",
+    "model fit",
+    "posterior probability",
+    "degrees of freedom",
+    "variance inflation factor",
+    "effect size estimate",
+    "measurement error"
   ],
   "Sign Language": [
     "Gloss",
@@ -116,7 +167,6 @@ var wordsByTopic = {
     "Kathryn Campbell-Kibler",
     "Susan Fussell"
   ],
-  //New additions
   "Origins of Language": [
     "Language emergence",
     "Homesign systems",
@@ -257,6 +307,7 @@ let currentTimeout; // Variable to store the timeout
 let selectedTopics = Object.keys(wordsByTopic); // all topics active
 
 var incorrectGuesses = 0;
+var correctGuesses = 0;
 
 function populateTopicDropdown() {
   const dropdown = document.getElementById('topicDropdown');
@@ -416,6 +467,14 @@ function checkGuess() {
     feedback.textContent = 'Correct!';
     feedback.style.color = 'green';
     incorrectGuesses = 0;
+    correctGuesses += 1;
+    if (correctGuesses % 3 == 0) {
+      delay -= 50;
+      if (delay <= 0) {
+          delay == 1;
+      }
+    }
+    //nextWord()
   } else {
     feedback.textContent = 'Try Again!';
     feedback.style.color = 'red';
