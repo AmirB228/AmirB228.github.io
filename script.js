@@ -337,3 +337,15 @@ window.onload = function() {
     }
   });
 };
+
+window.toggleTopicDropdown = toggleTopicDropdown;
+window.updateDelay = updateDelay;
+window.checkGuess = checkGuess;
+window.replay = replay;
+window.nextWord = nextWord;
+window.openEditModal = openEditModal;
+window.closeEditModal = closeEditModal;
+window.populateModalTextarea = populateModalTextarea;
+window.submitModalChanges = submitModalChanges;
+window.addModalTopic = addModalTopic;
+window.removeModalTopic = removeModalTopic;
