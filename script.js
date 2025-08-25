@@ -23,6 +23,21 @@ let selectedTopics = Object.keys(wordsByTopic); // all topics active
 
 var incorrectGuesses = 0;
 var correctGuesses = 0;
+var gotCurrentWordCorrect = false;
+
+var rapidFire = false;
+
+function cleanWord(str){
+  const valid = new Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""));
+
+  let cleaned = "";
+  for (const ch of str) {
+    if (valid.has(ch)) {
+      cleaned += ch;
+    }
+  }
+  return cleaned;
+}
 
 function populateTopicDropdown() {
   const dropdown = document.getElementById('topicDropdown');
@@ -176,24 +191,43 @@ function updateDelay() {
 }
 
 function checkGuess() {
+  rapidFire = document.getElementById('rapidFireToggle').checked;
+
+  if (gotCurrentWordCorrect == true) { return; }
   const guess = document.getElementById('inputGuess').value;
   const feedback = document.getElementById('feedback');
-  if (guess.toLowerCase() === currentWord.toLowerCase()) {
-    feedback.textContent = 'Correct!';
-    feedback.style.color = 'green';
+
+  let cleanGuess = cleanWord(guess).toLowerCase();
+  let cleanCurrent = cleanWord(currentWord).toLowerCase();
+
+  if (cleanGuess === cleanCurrent) {
     incorrectGuesses = 0;
     correctGuesses += 1;
+    gotCurrentWordCorrect = true
+
+    feedback.textContent = 'Correct! ' + 'x' + correctGuesses;
+    feedback.style.color = 'green';
+
     if (correctGuesses % 3 == 0) {
       delay -= 50;
       if (delay <= 0) {
           delay == 1;
       }
+      document.getElementById('inputDelay').value = delay;
+      feedback.textContent = 'Correct! ' + 'x' + correctGuesses + ' Speeding Up.';
     }
-    //nextWord()
+
+    if (rapidFire == true) {
+      nextWord();
+    }
+    
   } else {
+    incorrectGuesses++;
+    correctGuesses = 0;
+
     feedback.textContent = 'Try Again!';
     feedback.style.color = 'red';
-    incorrectGuesses++;
+
     if (incorrectGuesses == 3){
       var showWordButton = document.createElement('button')
       document.getElementById('controls').appendChild(showWordButton);
@@ -215,13 +249,16 @@ function replay() {
 
 function nextWord() {
   incorrectGuesses = 0;
+  gotCurrentWordCorrect = false;
   var showWordButton = document.getElementById('showWord');
   if (showWordButton){
     showWordButton.remove();
   }
   startGame();
   document.getElementById('inputGuess').value = '';
-  document.getElementById('feedback').textContent = '';
+  if (rapidFire == false) {
+    document.getElementById('feedback').textContent = '';
+  }
 }
 
 const ADMIN_PASSWORD = 'letmein123'; // Hard-coded admin password – change as desired
