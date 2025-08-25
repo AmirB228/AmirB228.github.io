@@ -59,6 +59,17 @@ button {
   font-weight: bold;
 }
 
+#rapidFireToggle {
+  height: 24px;
+  width: 24px;
+}
+
+#rapidFireContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 .topic-select-container {
   position: relative;
   margin-bottom: 20px;
